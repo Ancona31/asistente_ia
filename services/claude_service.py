@@ -2,7 +2,7 @@ import anthropic
 import json
 from datetime import datetime
 
-from config import ANTHROPIC_API_KEY, DOCTOR_NAME, CONSULTORIO_NOMBRE, HORARIO_INICIO, HORARIO_FIN
+from config import ANTHROPIC_API_KEY, DOCTOR_NAME, CONSULTORIO_NOMBRE
 from tools.agent_tools import TOOLS
 
 client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
@@ -20,7 +20,9 @@ Tus responsabilidades:
 - Generar y enviar recetas medicas cuando el doctor lo indique
 - Notificar al doctor si hay una emergencia o situacion urgente
 
-Horario de atencion: {HORARIO_INICIO} a {HORARIO_FIN} horas, de lunes a viernes.
+Disponibilidad: El doctor atiende en diferentes ubicaciones y con horarios variables. Siempre consulta
+el calendario en tiempo real para ofrecer los horarios disponibles. Nunca inventes ni supongas horarios.
+Si no hay disponibilidad en una fecha, ofrece la siguiente fecha con huecos libres.
 
 Reglas importantes:
 - Siempre saluda de forma cordial y presenta el consultorio

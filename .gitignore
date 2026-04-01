@@ -3,6 +3,9 @@
 credentials.json
 token.json
 
+# ngrok
+ngrok.exe
+
 # Archivos temporales (recetas PDF generadas)
 temp/
 

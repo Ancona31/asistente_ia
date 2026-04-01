@@ -1,0 +1,27 @@
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
+
+TWILIO_ACCOUNT_SID = os.getenv("TWILIO_ACCOUNT_SID")
+TWILIO_AUTH_TOKEN = os.getenv("TWILIO_AUTH_TOKEN")
+TWILIO_WHATSAPP_NUMBER = os.getenv("TWILIO_WHATSAPP_NUMBER")
+DOCTOR_WHATSAPP = os.getenv("DOCTOR_WHATSAPP")
+
+GOOGLE_CALENDAR_ID = os.getenv("GOOGLE_CALENDAR_ID", "primary")
+GOOGLE_CREDENTIALS_FILE = os.getenv("GOOGLE_CREDENTIALS_FILE", "credentials.json")
+GOOGLE_TOKEN_FILE = "token.json"
+
+GMAIL_SENDER = os.getenv("GMAIL_SENDER")
+
+DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./consultorio.db")
+
+DOCTOR_NAME = os.getenv("DOCTOR_NAME", "Doctor")
+CONSULTORIO_NOMBRE = os.getenv("CONSULTORIO_NOMBRE", "Consultorio")
+CONSULTORIO_DIRECCION = os.getenv("CONSULTORIO_DIRECCION", "")
+CONSULTORIO_TELEFONO = os.getenv("CONSULTORIO_TELEFONO", "")
+HORARIO_INICIO = os.getenv("HORARIO_INICIO", "09:00")
+HORARIO_FIN = os.getenv("HORARIO_FIN", "18:00")
+DURACION_TURNO_MINUTOS = int(os.getenv("DURACION_TURNO_MINUTOS", "30"))

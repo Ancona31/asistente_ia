@@ -1,0 +1,39 @@
+# Variables de entorno y credenciales — NUNCA subir
+.env
+credentials.json
+token.json
+
+# Archivos temporales (recetas PDF generadas)
+temp/
+
+# Base de datos local
+*.db
+*.db-shm
+*.db-wal
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+dist/
+build/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/

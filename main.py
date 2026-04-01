@@ -1,3 +1,4 @@
+from contextlib import asynccontextmanager
 from fastapi import FastAPI, Form, Depends, Request, HTTPException
 from fastapi.responses import PlainTextResponse
 from sqlalchemy.orm import Session
@@ -9,13 +10,15 @@ from handlers.message_handler import manejar_mensaje_entrante
 from services.whatsapp_service import enviar_mensaje
 from config import TWILIO_AUTH_TOKEN
 
-app = FastAPI(title="Asistente IA Consultorio")
 
-
-@app.on_event("startup")
-def startup():
+@asynccontextmanager
+async def lifespan(app: FastAPI):
     init_db()
     print("Base de datos inicializada.")
+    yield
+
+
+app = FastAPI(title="Asistente IA Consultorio", lifespan=lifespan)
 
 
 @app.get("/")
